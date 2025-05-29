@@ -10,111 +10,118 @@
       background-color: #f5f5f5;
       padding: 20px;
     }
-    .login {
-      max-width: 300px;
-      margin: 50px auto;
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
     .timeline {
-      max-width: 600px;
+      max-width: 700px;
       margin: 0 auto;
       background: white;
       padding: 20px;
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
-    h1, h2 {
+    h1 {
       text-align: center;
     }
     .entry {
-      border-left: 3px solid #4CAF50;
-      padding-left: 10px;
+      border-left: 4px solid #4CAF50;
+      padding-left: 15px;
       margin: 20px 0;
     }
-    label, input {
+    .entry strong {
+      color: #333;
+    }
+    .entry em {
+      color: #777;
       display: block;
+      margin-bottom: 5px;
+    }
+    .private {
+      display: none;
+    }
+    .login {
+      max-width: 300px;
+      margin: 40px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    input, button {
       width: 100%;
-      margin-bottom: 10px;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 1rem;
     }
     button {
       background-color: #4CAF50;
       color: white;
       border: none;
-      padding: 10px;
       cursor: pointer;
-      width: 100%;
     }
     button:hover {
       background-color: #45a049;
     }
-    .private {
-      display: none;
-    }
   </style>
 </head>
 <body>
-  <div class="login" id="login">
-    <h2>Login for Private Entries</h2>
-    <label for="password">Enter Password:</label>
-    <input type="password" id="password" />
-    <button onclick="checkPassword()">Login</button>
-  </div>
-
-  <div class="timeline" id="timeline">
+  <div class="timeline">
     <h1>Ekansh's Accomplishments</h1>
 
     <div class="entry">
-      <strong>Grade: 6th</strong><br>
-      <em>Date: 2/12/2022</em><br>
-      District Science Fair - Second place in Microbiology
+      <strong>District Science Fair - Second Place, Microbiology</strong>
+      <em>Grade: 6th | Date: 2/12/2022</em>
     </div>
 
     <div class="entry">
-      <strong>Grade: 7th</strong><br>
-      <em>Date: 2023</em><br>
-      District Science Fair - First place in Engineering
+      <strong>District Science Fair - First Place, Engineering</strong>
+      <em>Grade: 7th | Date: 2023</em>
     </div>
 
     <div class="entry">
-      <strong>Grade: 8th</strong><br>
-      <em>Date: 2024</em><br>
-      County Science Fair participant
+      <strong>County Science Fair</strong>
+      <em>Grade: 8th | Date: 2024</em>
     </div>
 
     <div class="entry">
-      <strong>Grade: 8th</strong><br>
-      <em>Date: 3/28/2024</em><br>
-      Kentucky State NASP Tournament - Archery
+      <strong>Kentucky State NASP Tournament - Archery</strong>
+      <em>Grade: 8th | Date: 3/28/2024</em>
     </div>
 
     <div class="entry">
-      <strong>Grade: 8th</strong><br>
-      <em>Date: 5/9/2024</em><br>
-      2024 NASP Eastern Nationals - Archery
+      <strong>NASP Eastern Nationals - Archery</strong>
+      <em>Grade: 8th | Date: 5/9/2024</em>
     </div>
 
     <div class="entry">
-      <strong>Grade: 9th</strong><br>
-      <em>Date: 3/1/2025</em><br>
-      State Debate Novice Public Forum - First place<br>
-      State Debate Novice Public Forum - First Speaker
+      <strong>State Debate - Novice Public Forum First Place</strong>
+      <em>Grade: 9th | Date: 3/1/2025</em>
     </div>
 
     <div class="entry">
-      <strong>Grade: 9th</strong><br>
-      <em>Date: 3/14/2025</em><br>
-      2025 US NASP Eastern Nationals - Archery<br>
-      2025 KY NASP State Tournament - Archery
+      <strong>State Debate - Novice Public Forum First Speaker</strong>
+      <em>Grade: 9th | Date: 3/1/2025</em>
+    </div>
+
+    <div class="entry">
+      <strong>US NASP Eastern Nationals - Archery</strong>
+      <em>Grade: 9th | Date: 3/14/2025</em>
+    </div>
+
+    <div class="entry">
+      <strong>KY NASP State Tournament - Archery</strong>
+      <em>Grade: 9th | Date: 3/14/2025</em>
     </div>
 
     <div class="entry private" id="private-entry">
-      <strong>Grade: 12th</strong><br>
-      <em>Date: Future</em><br>
-      This is a placeholder for private accomplishments.
+      <strong>[Private] Placeholder for future entries</strong>
+      <em>Grade: 12th | Date: Future</em>
     </div>
+  </div>
+
+  <div class="login">
+    <h2>Unlock Private Entry</h2>
+    <input type="password" id="password" placeholder="Enter Password">
+    <button onclick="checkPassword()">Login</button>
   </div>
 
   <script>
@@ -122,6 +129,7 @@
       const input = document.getElementById('password').value;
       if (input === 'Ekansh is the Best') {
         document.getElementById('private-entry').style.display = 'block';
+        alert("Private entry unlocked!");
       } else {
         alert('Wrong password. Try again.');
       }
