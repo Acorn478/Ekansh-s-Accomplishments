@@ -19,7 +19,6 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
     .timeline {
-      display: none;
       max-width: 600px;
       margin: 0 auto;
       background: white;
@@ -51,11 +50,14 @@
     button:hover {
       background-color: #45a049;
     }
+    .private {
+      display: none;
+    }
   </style>
 </head>
 <body>
   <div class="login" id="login">
-    <h2>Login</h2>
+    <h2>Login for Private Entries</h2>
     <label for="password">Enter Password:</label>
     <input type="password" id="password" />
     <button onclick="checkPassword()">Login</button>
@@ -65,21 +67,53 @@
     <h1>Ekansh's Accomplishments</h1>
 
     <div class="entry">
+      <strong>Grade: 6th</strong><br>
+      <em>Date: 2/12/2022</em><br>
+      District Science Fair - Second place in Microbiology
+    </div>
+
+    <div class="entry">
+      <strong>Grade: 7th</strong><br>
+      <em>Date: 2023</em><br>
+      District Science Fair - First place in Engineering
+    </div>
+
+    <div class="entry">
+      <strong>Grade: 8th</strong><br>
+      <em>Date: 2024</em><br>
+      County Science Fair participant
+    </div>
+
+    <div class="entry">
+      <strong>Grade: 8th</strong><br>
+      <em>Date: 3/28/2024</em><br>
+      Kentucky State NASP Tournament - Archery
+    </div>
+
+    <div class="entry">
+      <strong>Grade: 8th</strong><br>
+      <em>Date: 5/9/2024</em><br>
+      2024 NASP Eastern Nationals - Archery
+    </div>
+
+    <div class="entry">
       <strong>Grade: 9th</strong><br>
-      <em>Date: September 2023</em><br>
-      Placeholder for an accomplishment
+      <em>Date: 3/1/2025</em><br>
+      State Debate Novice Public Forum - First place<br>
+      State Debate Novice Public Forum - First Speaker
     </div>
 
     <div class="entry">
-      <strong>Grade: 10th</strong><br>
-      <em>Date: March 2024</em><br>
-      Placeholder for an accomplishment
+      <strong>Grade: 9th</strong><br>
+      <em>Date: 3/14/2025</em><br>
+      2025 US NASP Eastern Nationals - Archery<br>
+      2025 KY NASP State Tournament - Archery
     </div>
 
-    <div class="entry">
-      <strong>Grade: 11th</strong><br>
-      <em>Date: January 2025</em><br>
-      Placeholder for an accomplishment
+    <div class="entry private" id="private-entry">
+      <strong>Grade: 12th</strong><br>
+      <em>Date: Future</em><br>
+      This is a placeholder for private accomplishments.
     </div>
   </div>
 
@@ -87,8 +121,7 @@
     function checkPassword() {
       const input = document.getElementById('password').value;
       if (input === 'Ekansh is the Best') {
-        document.getElementById('login').style.display = 'none';
-        document.getElementById('timeline').style.display = 'block';
+        document.getElementById('private-entry').style.display = 'block';
       } else {
         alert('Wrong password. Try again.');
       }
